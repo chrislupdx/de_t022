@@ -1,0 +1,84 @@
+1.
+
+A. 
+
+return studentID and name from name_table where (total_marks for each student exceeds StudentID[v002].total_marks)
+
+
+B. pandas
+
+def upperE(name_table):
+	#create a copy of name_table named u_name_table that we'll return
+	u_name_table = create_df()
+	u_name_table = name_table.copy()	
+	
+	#go through each row in u_name_table
+	for row in u_name_table.itrows():
+		has_e = false #a flag for if a name has an e
+		for char in range(row[Name]): #for every character in the row's name
+			if(char == 'e'):
+					has_e = true 
+		#make the change right before we move to the next row
+		if(has_e):
+			row[Name].str.upper()
+		else:
+			row[Name].str.lower()
+		return u_name_table
+
+C. 
+import pandas as pd
+
+def partC(u_name_table, mark_table):
+	#avg_table summarizes the average grade of uppercase and lowercase names 
+	#row: upper_case/lower_case column, columns: average/IDs #this isn't how dataframes like to be used
+	#give avg table ordered by ascension (rows upper/lower) and columns:avg/StudentIDList
+
+	lower_avg = lower_count = lower_sum = upper_count = upper_avg = upper_sum = 0
+	
+	for row in u_name_table.itrows():
+		#score should be the mark_table Total_marks
+		u_ID= row["StudentID"]
+		one_mark = mark_table[(u_ID)]
+
+		#append upper_list, and lower_list as rows into avg_table	
+		upper_list = pd.Series(data, );
+		lower_list = pd.Series();
+
+		//if upper, increment upper_count and add the score value to upper_sum
+		if(row[Name].isupper() == True):
+			upper_count = upper_count + 1
+			upper_sum = upper_sum + one_mark
+			upper_list.append(row["StudentID"]) #we're appending to a normal list here, not a series						
+		//then its lower: do the exact same thing except use lower_vars
+		else:
+			lower_count = lower_count + 1
+			lower_sum = lower_sum + mark_table[StudentID] #needs <3
+			lower_list.append(row["StudentID"]) #we're appending to a normal list here, not a series	
+
+	lower_avg = lower_sum / lower_count
+	upper_avg = upper_sum / upper_count
+	
+	
+	avg_table = pd.DataFrame(columns = ["avg", "StudentIDList"])
+	
+	upper_row = [upper_avg, upper_list]
+	lower_row = [ lower_avg, lower_list]
+
+	avg_table.loc["upper"] = upper_row
+	avg_table.loc["lower"] = lower_row
+	return avg_table
+	
+2. 
+
+Part A.
+import pandas as pd
+
+//process Congress_white_house.csv into a dataframe
+//process white_house_salaries.csv into a dataframe
+
+#common feature engineering
+#data prep tasks
+
+Part B.
+#what are some descriptive statistics about this?
+#what can i say about distribution of this data?
