@@ -82,3 +82,18 @@ import pandas as pd
 Part B.
 #what are some descriptive statistics about this?
 #what can i say about distribution of this data?
+
+
+No code:
+Q: If you were asked to impute null values in a column of a file that was 365 Gigabytes, what would you do?  What tools would you use?  What tools would you NOT use?
+A: I would NOT use excel. I would definitely consider doing it programmatically with SQL.
+
+Q: What would you do if you were asked to do the above task every Thursday morning at 2:00am?
+A: Ask which tasks take priority (mission-critical,  standard, great-to-have) and then try my hardest to get critical work done, then work my way down priority. I would start by staying the night before and working on these tasks.  Once I have a better grasp of that workflow I would write unit tests for these tasks with the intention of using a test driven development metholodgy.  Once the tests are in place, I would start figuring out how to go about automating these tasks (most likely a mix of bash (for system related necessities and file management)  and python(for everything else)).
+
+Q:Who is your favorite mathematician, statistician or computer scientist and why?
+A: Edsger Dijkstra, the span of work he did across computer science is almost akin to the founding fathers of social sciences like Max Weber (spanning multiple fields and having an impact that lasted centuries.  Dijkstra’s semaphore and minimum spanning tree algorithm come to mind immediately as some of the most ingenious and elegant solutions to problems that are still applicable today.
+
+
+
+
